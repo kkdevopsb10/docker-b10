@@ -1,0 +1,183 @@
+ 1  clear
+    2  docker version
+    3  sudo apt install docker.io
+    4  sudo apt update -y
+    5  clear
+    6  sudo apt install docker.io
+    7  clear
+    8  docker --version
+    9  sudo usermod -aG ubuntu docker
+   10  sudo usermod -aG docker ubuntu
+   11  pwd
+   12  clear
+   13  docker version
+   14  docker images
+   15  docker ps
+   16  exit
+   17  docker images
+   18  docker ps
+   19  clear
+   20  docker images
+   21  docker ps
+   22  ps -ef|grep -i "docker"
+   23  clear
+   24  docker pull ubuntu:9997867889892kkk
+   25  docker pull ubuntu:latest
+   26  docker images
+   27  docker rmi ubuntu:latest
+   28  docker images
+   29  clear
+   30  docker pull sonarqube:lts-community
+   31  clar
+   32  clear
+   33  docker images
+   34  docker ps
+   35  docker ps -a
+   36  docker run -d -p 9000:9000 --name sqcon sonarqube:lts-community
+   37  docker ps
+   38  docker run -d -p 8639:9000 --name sqcon1 sonarqube:lts-community
+   39  docker ps
+   40  clear
+   41  docker images
+   42  docker ps
+   43  docker stop sqcon
+   44  docker ps
+   45  docker ps -a
+   46  docker stop sqcon1
+   47  docker ps -a
+   48  docker start sqcon
+   49  docker ps -a
+   50  clear
+   51  docker images
+   52  docker ps -a
+   53  docker rm -f sqcon
+   54  docker rm -f sqcon1
+   55  docker ps -a
+   56  docker images
+   57  docker rmi sonarqube:lts-community
+   58  docker images
+   59  docker ps -a
+   60  clear
+   61  docker info
+   62  clear
+   63  docker --version
+   64  git clone https://github.com/kkdevopsb10/maven-webapplication-project-kkfunda.git
+   65  ls
+   66  cd maven-webapplication-project-kkfunda/
+   67  ls -lrth
+   68  mvn clean package
+   69  sudo apt install maven
+   70  clear
+   71  mvn -v
+   72  clear
+   73  ls  -lrth
+   74  mvn clean package
+   75  clear
+   76  ls -lrth
+   77  ls -lrth target/
+   78  docker images
+   79  vi Dockerfile
+   80  nano Dockerfile
+   81  cat Dockerfile
+   82  clear
+   83  cat Dockerfile
+   84  ls -lrth
+   85  pwd
+   86  docker build -t kkdevopsb10/webapp:1.0.0 .
+   87  clear
+   88  docker images
+   89  ls -lrth target/
+   90  docker history tomcat:9.0.100
+   91* docker history kkdevopsb10/webapp:1.0.
+   92  cat Dockerfile
+   93  clear
+   94  docker images
+   95  docker build -t kkdevopsb10/webapp:1.0.1 .
+   96  docker images
+   97  docker push kkdevopsb10/webapp:1.0.0
+   98  clear
+   99  docker login -u kkdevopsb10 -p
+  100  docker login -u kkdevopsb10
+  101  docker info
+  102  clear
+  103  docker push kkdevopsb10/webapp:1.0.0
+  104  docker push kkdevopsb10/webapp:1.0.1
+  105  clear
+  106  docker logout
+  107  docker push kkdevopsb10/webapp:1.0.1
+  108  docker logout
+  109  docker push kkdevopsb10/webapp:1.0.1
+  110  docker info
+  111  clear
+  112  docker images
+  113  docker images ls
+  114  docker images
+  115  docker image ls
+  116  clear
+  117  docker images
+  118  docker run -d -p 8080:8080 --name webappone kkdevopsb10/webapp:1.0.0
+  119  docker ps -a
+  120  clear
+  121  docker images
+  122  docker ps -a
+  123  docker rm -f webappone
+  124  docker ps -a
+  125  clear
+  126  docker images
+  127  docker pull ubuntu
+  128  docker pull jenkins/jenkins
+  129  clear
+  130  docker images
+  131  docker images -aq
+  132  docker rmi -f $(docker images -aq)
+  133  docker images
+  134  clear
+  135  docker imgages
+  136  docker images
+  137  docker run -d -p 8080:8080 --name webappone kkdevopsb10/webapp:1.0.0
+  138  docker images
+  139  docker ps -a
+  140  clear
+  141  docker pull sonarqube
+  142  clear
+  143  docker images
+  144  docker login -u kkdevopsb10
+  145  docker push sonarqube:latest
+  146  docker tag sonarqube:latest kkdevopsb10/sonarqube:latest
+  147  docker images
+  148  docker push kkdevopsb10/sonarqube:latest
+  149  clear
+  150  docker imaages
+  151  clear
+  152  docker images
+  153  docker rmi -f $(docker images -aq)
+  154  clear
+  155  dockerimages
+  156  docker images
+  157  docker rmi -f $(docker images -aq)
+  158  docker ps -a
+  159  docker rm -f $(docker ps -aq)
+  160  docker rmi -f $(docker images -aq)
+  161  docker images
+  162  docker ps -a
+  163  docker pull kkdevopsb10/webapp:1.0.9
+  164  docker pull kkdevopsb10/webapp:1.0.0
+  165  docker images
+  166  clear
+  167  docker images
+  168  docker save -o kkdevopsb10/webapp:1.0.0
+  169  docker save -o 65f00d80075d
+  170  docker save -o webapp.tar 65f00d80075d
+  171  ls -lrth
+  172  docker images
+  173  docker rmi kkdevopsb10/webapp:1.0.0
+  174  clear
+  175  docker images
+  176  ls -lrth
+  177  docker load -i webapp.tar
+  178  docker images
+  179  docker images -a
+  180  clar
+  181  clear
+  182  history
+ubuntu@ip-172-31-2-189:~/maven-webapplication-project-kkfunda$
