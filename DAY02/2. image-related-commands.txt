@@ -1,0 +1,122 @@
+commands
+========
+
+docker info 
+docker --version or docker version
+
+image related
+=============
+
+How to build docker image
+-------------------------
+
+docker build -t <image> <buildContext>
+
+docker build -t kkeducation123456/java-web-app:1 .
+docker build -t nexus.jio.com/java-web-app:1 .
+
+docker build -f customName kkeducation123456/java-web-app:1 .
+
+
+How to list the images
+----------------------
+
+docker images or docker image ls
+
+How to login docker hub
+-----------------------
+
+docker login -u username -p password
+
+docker info
+
+cat password |docker login -u kkeducation12345 --password-stdin
+
+How to logout 
+-------------
+
+docker logout
+docker info
+
+
+How to push an docker image
+---------------------------
+docker push kkeducation123456/java-web-app:1 .
+
+
+How to pull the image
+---------------------
+
+docker pull kkeducation123456/java-web-app:1
+
+to see more details about image
+-------------------------------
+
+docker image inspect <imageid/imageName>
+
+To see the layers of an image
+-----------------------------
+
+docker history <imageId/ImageName>
+
+How to delete image
+-------------------
+
+docker rmi <image_id/Image_name>
+
+
+How to delete multiple images?
+------------------------------
+
+docker rmi <image1> <image2>
+
+How to delete all the images
+----------------------------
+
+docker rmi -f $(docker images -q)
+
+what is dangling images?
+------------------------
+
+How to display only dangling images?
+------------------------------------
+
+docker images -f dangling=true
+
+how to delete all the dangling images?
+---------------------------------------
+
+docker rmi -f $(docker images -q -f dangling=true)
+
+
+
+docker system prune
+docker image prune
+docker container prune
+docker network prune
+docker volume prune
+
+
+
+docker tag
+-----------
+
+docker tag  kkeducation123456/java-web-app:1 customname
+
+
+
+docker system df
+----------------
+
+
+How to move image from one server to another server?
+----------------------------------------------------
+
+Approach 1: Use the nexus/Jfrog/DTR/ECR
+
+Approach 2:
+
+   docker save -o <filename>.tar <imageId>
+   scp filename.tar ubuntu@172.34.42.78:/home/ubuntu
+
+  docker load -i filename.tar
